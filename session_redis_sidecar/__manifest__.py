@@ -76,8 +76,8 @@ Support
     "author": "Think About Bit Technologies",
     "website": "www.thinkaboutbit.com",
     "license": "LGPL-3",
-    "price": 230.00,
-    "currency": "EUR",
+    "price": 200.00,
+    "currancy": 'EUR',
     "depends": ["base"],
     "external_dependencies": {
         "python": ["redis"],
