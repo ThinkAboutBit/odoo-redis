@@ -69,12 +69,12 @@ Support
 -------
 * Documentation: Full README with Kubernetes deployment examples
 * Examples: Docker Compose setup included for local testing
-* Source: https://github.com/aspect-apps/odoo-redis-session-sidecar
+* Source: unoffocialtab@gmail.com
 """,
     "version": "1.0.0",
     "category": "Technical",
-    "author": "TAB",
-    "website": "https://github.com/aspect-apps/odoo-redis-session-sidecar",
+    "author": "Think About Bit Technologies",
+    "website": "www.thinkaboutbit.com",
     "license": "LGPL-3",
     "price": 230.00,
     "currency": "EUR",
