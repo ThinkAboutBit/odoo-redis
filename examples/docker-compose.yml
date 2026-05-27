@@ -1,0 +1,185 @@
+# =============================================================================
+# Odoo Redis Session Sidecar - Test Setup
+# =============================================================================
+#
+# This demonstrates the Master-Replica sidecar architecture:
+# - 2 Odoo pods with local Redis replicas (sidecars)
+# - 1 Redis Master (source of truth)
+# - Nginx load balancer (round-robin)
+# - PostgreSQL database
+#
+# Usage:
+#   docker compose up -d
+#   Open http://localhost:8069
+#
+# Test session persistence:
+#   1. Login to Odoo
+#   2. Stop one Odoo pod: docker stop odoo-pod-1
+#   3. Refresh browser - session should persist!
+#
+# =============================================================================
+
+services:
+  # ===========================================================================
+  # NGINX LOAD BALANCER
+  # ===========================================================================
+  nginx:
+    image: nginx:alpine
+    container_name: odoo-lb
+    ports:
+      - "8069:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - odoo1
+      - odoo2
+    networks:
+      - frontend
+    restart: unless-stopped
+
+  # ===========================================================================
+  # ODOO POD 1 + REDIS SIDECAR
+  # ===========================================================================
+  odoo1:
+    build:
+      context: .
+      args:
+        ODOO_VERSION: "19.0"
+    image: odoo-redis:19.0
+    container_name: odoo-pod-1
+    volumes:
+      - ../session_redis_sidecar:/mnt/extra-addons/session_redis_sidecar:ro
+      - odoo1-data:/var/lib/odoo
+      - odoo-filestore:/var/lib/odoo/filestore
+    environment:
+      - HOST=db
+      - PORT=5432
+      - USER=odoo
+      - PASSWORD=odoo
+      # Redis Sidecar Configuration
+      - REDIS_MASTER_HOST=redis-master
+      - REDIS_MASTER_PORT=6379
+      - REDIS_LOCAL_HOST=127.0.0.1
+      - REDIS_LOCAL_PORT=6379
+    command: odoo --load=base,web,session_redis_sidecar
+    depends_on:
+      db:
+        condition: service_healthy
+      redis-master:
+        condition: service_healthy
+    networks:
+      - frontend
+      - backend
+    restart: unless-stopped
+
+  redis-sidecar-1:
+    image: redis:7-alpine
+    container_name: redis-sidecar-1
+    network_mode: "service:odoo1"
+    command: redis-server --replicaof redis-master 6379 --replica-read-only yes
+    depends_on:
+      - redis-master
+    restart: unless-stopped
+
+  # ===========================================================================
+  # ODOO POD 2 + REDIS SIDECAR
+  # ===========================================================================
+  odoo2:
+    build:
+      context: .
+      args:
+        ODOO_VERSION: "19.0"
+    image: odoo-redis:19.0
+    container_name: odoo-pod-2
+    volumes:
+      - ../session_redis_sidecar:/mnt/extra-addons/session_redis_sidecar:ro
+      - odoo2-data:/var/lib/odoo
+      - odoo-filestore:/var/lib/odoo/filestore
+    environment:
+      - HOST=db
+      - PORT=5432
+      - USER=odoo
+      - PASSWORD=odoo
+      # Redis Sidecar Configuration
+      - REDIS_MASTER_HOST=redis-master
+      - REDIS_MASTER_PORT=6379
+      - REDIS_LOCAL_HOST=127.0.0.1
+      - REDIS_LOCAL_PORT=6379
+    command: odoo --load=base,web,session_redis_sidecar
+    depends_on:
+      db:
+        condition: service_healthy
+      redis-master:
+        condition: service_healthy
+    networks:
+      - frontend
+      - backend
+    restart: unless-stopped
+
+  redis-sidecar-2:
+    image: redis:7-alpine
+    container_name: redis-sidecar-2
+    network_mode: "service:odoo2"
+    command: redis-server --replicaof redis-master 6379 --replica-read-only yes
+    depends_on:
+      - redis-master
+    restart: unless-stopped
+
+  # ===========================================================================
+  # REDIS MASTER
+  # ===========================================================================
+  redis-master:
+    image: redis:7-alpine
+    container_name: redis-master
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+    networks:
+      - frontend
+      - backend
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  # ===========================================================================
+  # POSTGRESQL DATABASE
+  # ===========================================================================
+  db:
+    image: postgres:16-alpine
+    container_name: odoo-db
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+# =============================================================================
+# NETWORKS
+# =============================================================================
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+# =============================================================================
+# VOLUMES
+# =============================================================================
+volumes:
+  postgres-data:
+  redis-data:
+  odoo1-data:
+  odoo2-data:
+  odoo-filestore:
