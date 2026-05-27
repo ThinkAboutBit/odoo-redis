@@ -76,6 +76,8 @@ Support
     "author": "TAB",
     "website": "https://github.com/aspect-apps/odoo-redis-session-sidecar",
     "license": "LGPL-3",
+    "price": 230.00,
+    "currency": "EUR",
     "depends": ["base"],
     "external_dependencies": {
         "python": ["redis"],
