@@ -1,7 +1,7 @@
 {
     "name": "Redis Session Store - Sidecar Pattern",
     "summary": "10x faster session reads with Master-Replica sidecar architecture for Kubernetes",
-    "description": "
+    "description": ""
 Redis Session Store with Sidecar Pattern
 =========================================
 
