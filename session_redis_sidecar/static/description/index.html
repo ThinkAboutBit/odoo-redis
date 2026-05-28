@@ -10,9 +10,9 @@
                 Unleash 10x faster session reads for enterprise-grade, high-traffic Odoo clusters.
             </p>
             <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="badge badge-pill p-3 m-1" style="background-color: #326ce5; color: white; font-size: 0.95rem; font-weight: 600;">☸️ Kubernetes Native</span>
-                <span class="badge badge-pill p-3 m-1" style="background-color: #a32a2a; color: white; font-size: 0.95rem; font-weight: 600;">🗄️ Redis Master-Replica</span>
-                <span class="badge badge-pill p-3 m-1" style="background-color: #28a745; color: white; font-size: 0.95rem; font-weight: 600;">⚡ Ultra Low ~0.1ms Latency</span>
+                <span class="badge badge-pill p-3 m-1" style="background-color: #326ce5; color: white; font-size: 0.95rem; font-weight: 600;">&#9096; Kubernetes Native</span>
+                <span class="badge badge-pill p-3 m-1" style="background-color: #a32a2a; color: white; font-size: 0.95rem; font-weight: 600;">&#128452; Redis Master-Replica</span>
+                <span class="badge badge-pill p-3 m-1" style="background-color: #28a745; color: white; font-size: 0.95rem; font-weight: 600;">&#9889; Ultra Low ~0.1ms Latency</span>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="row my-5 px-3">
-        <div class="col-12 p-4 style='background: #fff;'" style="border-left: 5px solid #e63946; background-color: #fff5f5; border-radius: 4px 12px 12px 4px;">
+        <div class="col-12 p-4" style="border-left: 5px solid #e63946; background-color: #fff5f5; border-radius: 4px 12px 12px 4px;">
             <h3 style="font-weight: 700; color: #c32735; margin-bottom: 10px;">The Problem with Traditional Redis Setups</h3>
             <p style="font-size: 1.1rem; line-height: 1.7; color: #4A5568; margin-bottom: 0;">
                 Standard Odoo Redis configurations route all traffic to a <strong>single central Redis instance</strong>. Every individual page asset or endpoint execution demands a network hop to retrieve session data (~1ms). Under high traffic or massive concurrency, this network overhead limits performance and spikes CPU latency.
@@ -82,7 +82,7 @@
 |  +--------|--------+  +--------|--------+  +--------|--------+  |
 |           |                    |                    |           |
 |           +--------------------+--------------------+           |
-|                                │                                |
+|                                |                                |
 |                    +-----------v-----------+                    |
 |                    |    REDIS MASTER       |                    |
 |                    |  (Source of Truth)    |                    |
@@ -115,7 +115,7 @@
         </div>
         <div class="col-md-6 mb-4">
             <div class="card h-100 p-4 border-0" style="background-color: #fdfdfd; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid #326ce5; border-radius: 8px;">
-                <h4 style="font-weight: 700; color: #1e1e2f;">☸️ Sidecar Deployment Optimization</h4>
+                <h4 style="font-weight: 700; color: #1e1e2f;">⚙️ Sidecar Deployment Optimization</h4>
                 <p style="color: #666; margin-bottom: 0;">Designed from scratch for modern cloud native Kubernetes topographies. Co-allocates the session storage layers inside the app pod directly next to Odoo ecosystem engines.</p>
             </div>
         </div>
@@ -137,7 +137,7 @@
                             <th class="p-3 text-left">Feature Capabilities</th>
                             <th class="p-3">session_redis (OCA)</th>
                             <th class="p-3">session_redis_gt</th>
-                            <th class="p-3 text-white" style="background-color: #28a745; font-weight: 700;">This Module ⭐</th>
+                            <th class="p-3 text-white" style="background-color: #28a745; font-weight: 700;">This Module</th>
                         </tr>
                     </thead>
                     <tbody style="color: #4A5568;">
