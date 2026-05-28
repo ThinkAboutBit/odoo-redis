@@ -1,22 +1,25 @@
 <div class="container-fluid oe_container" style="font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; color: #2C3E50;">
 
-    <div class="row justify-content-center text-center text-white my-4 mx-0"
-         style="background: linear-gradient(135deg, #1e1e2f 0%, #111119 100%); padding: 50px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+    <!-- HERO BANNER -->
+    <div class="row justify-content-center text-center my-4 mx-0"
+         style="background-color: #1e1e2f; padding: 50px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
         <div class="col-md-10">
-            <h1 style="font-size: 3rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 15px;">
-                Redis Session Store <span style="background: linear-gradient(90deg, #e63946, #ff7043); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">- Sidecar Pattern</span>
+            <h1 style="font-size: 3rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 15px; color: #ffffff;">
+                Redis Session Store
+                <span style="color: #ff7043;">- Sidecar Pattern</span>
             </h1>
-            <p style="font-size: 1.4rem; font-weight: 300; opacity: 0.9; max-width: 800px; margin: 0 auto 25px auto;">
+            <p style="font-size: 1.4rem; font-weight: 300; color: #cccccc; max-width: 800px; margin: 0 auto 25px auto;">
                 Unleash 10x faster session reads for enterprise-grade, high-traffic Odoo clusters.
             </p>
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-                <span class="badge badge-pill p-3 m-1" style="background-color: #326ce5; color: white; font-size: 0.95rem; font-weight: 600;">&#9096; Kubernetes Native</span>
-                <span class="badge badge-pill p-3 m-1" style="background-color: #a32a2a; color: white; font-size: 0.95rem; font-weight: 600;">&#128452; Redis Master-Replica</span>
-                <span class="badge badge-pill p-3 m-1" style="background-color: #28a745; color: white; font-size: 0.95rem; font-weight: 600;">&#9889; Ultra Low ~0.1ms Latency</span>
+            <div>
+                <span style="display: inline-block; background-color: #326ce5; color: #ffffff; font-size: 0.95rem; font-weight: 600; padding: 10px 18px; border-radius: 50px; margin: 4px;">&#9096; Kubernetes Native</span>
+                <span style="display: inline-block; background-color: #a32a2a; color: #ffffff; font-size: 0.95rem; font-weight: 600; padding: 10px 18px; border-radius: 50px; margin: 4px;">&#128452; Redis Master-Replica</span>
+                <span style="display: inline-block; background-color: #28a745; color: #ffffff; font-size: 0.95rem; font-weight: 600; padding: 10px 18px; border-radius: 50px; margin: 4px;">&#9889; Ultra Low ~0.1ms Latency</span>
             </div>
         </div>
     </div>
 
+    <!-- STATS ROW -->
     <div class="row text-center my-5 justify-content-center">
         <div class="col-6 col-md-3 mb-4">
             <div class="p-3" style="background: #fdfdfd; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.04); border-bottom: 4px solid #e63946;">
@@ -44,6 +47,7 @@
         </div>
     </div>
 
+    <!-- PROBLEM STATEMENT -->
     <div class="row my-5 px-3">
         <div class="col-12 p-4" style="border-left: 5px solid #e63946; background-color: #fff5f5; border-radius: 4px 12px 12px 4px;">
             <h3 style="font-weight: 700; color: #c32735; margin-bottom: 10px;">The Problem with Traditional Redis Setups</h3>
@@ -53,13 +57,13 @@
         </div>
     </div>
 
+    <!-- ARCHITECTURE DIAGRAM -->
     <div class="row my-5">
         <div class="col-12 text-center">
-            <h2 style="font-weight: 800; color: #1e1e2f; position: relative; display: inline-block; padding-bottom: 10px; margin-bottom: 30px;">
+            <h2 style="font-weight: 800; color: #1e1e2f; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; border-bottom: 4px solid #e63946;">
                 Infrastructure Architecture
-                <span style="position: absolute; bottom: 0; left: 25%; width: 50%; height: 4px; background-color: #e63946; border-radius: 2px;"></span>
             </h2>
-            <div class="p-4" style="background-color: #111119; border-radius: 12px; box-shadow: inset 0 2px 8px rgba(0,0,0,0.4); overflow-x: auto;">
+            <div class="p-4" style="background-color: #111119; border-radius: 12px; overflow-x: auto;">
                 <pre style="text-align: left; display: inline-block; color: #a4b1cd; font-family: 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.4; margin: 0; padding: 10px; white-space: pre; background: transparent; border: none;">
 +-----------------------------------------------------------------+
 |                     KUBERNETES CLUSTER                          |
@@ -94,82 +98,83 @@
         </div>
     </div>
 
+    <!-- FEATURES -->
     <div class="row my-5">
         <div class="col-12 text-center mb-4">
-            <h2 style="font-weight: 800; color: #1e1e2f; position: relative; display: inline-block; padding-bottom: 10px;">
+            <h2 style="font-weight: 800; color: #1e1e2f; display: inline-block; padding-bottom: 10px; border-bottom: 4px solid #28a745;">
                 Outstanding Features
-                <span style="position: absolute; bottom: 0; left: 25%; width: 50%; height: 4px; background-color: #28a745; border-radius: 2px;"></span>
             </h2>
         </div>
         <div class="col-md-6 mb-4">
-            <div class="card h-100 p-4 border-0" style="background-color: #fdfdfd; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid #e63946; border-radius: 8px;">
+            <div class="p-4" style="background-color: #fdfdfd; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid #e63946; border-radius: 8px; height: 100%;">
                 <h4 style="font-weight: 700; color: #1e1e2f;">&#128640; Dual Connection Architecture</h4>
                 <p style="color: #666; margin-bottom: 0;">Routes write commands safely to the primary Redis Master node, while session reads execute against the synchronized sidecar node local to the container pod.</p>
             </div>
         </div>
         <div class="col-md-6 mb-4">
-            <div class="card h-100 p-4 border-0" style="background-color: #fdfdfd; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid #28a745; border-radius: 8px;">
+            <div class="p-4" style="background-color: #fdfdfd; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid #28a745; border-radius: 8px; height: 100%;">
                 <h4 style="font-weight: 700; color: #1e1e2f;">&#9889; Localhost Speedup</h4>
                 <p style="color: #666; margin-bottom: 0;">Pulls session contexts directly out of the local network interface loopback engine. Cuts communication latency down from 1.2ms to an impressive 0.1ms framework scale.</p>
             </div>
         </div>
         <div class="col-md-6 mb-4">
-            <div class="card h-100 p-4 border-0" style="background-color: #fdfdfd; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid #326ce5; border-radius: 8px;">
+            <div class="p-4" style="background-color: #fdfdfd; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid #326ce5; border-radius: 8px; height: 100%;">
                 <h4 style="font-weight: 700; color: #1e1e2f;">&#9881; Sidecar Deployment Optimization</h4>
                 <p style="color: #666; margin-bottom: 0;">Designed from scratch for modern cloud native Kubernetes topographies. Co-allocates the session storage layers inside the app pod directly next to Odoo ecosystem engines.</p>
             </div>
         </div>
         <div class="col-md-6 mb-4">
-            <div class="card h-100 p-4 border-0" style="background-color: #fdfdfd; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid #f1c40f; border-radius: 8px;">
+            <div class="p-4" style="background-color: #fdfdfd; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid #f1c40f; border-radius: 8px; height: 100%;">
                 <h4 style="font-weight: 700; color: #1e1e2f;">&#8635; Smart Failover Routines</h4>
                 <p style="color: #666; margin-bottom: 0;">Built with fallback logic. If a local node encounters an un-replicated record state, the code seamlessly pulls verification directly from the master layer automatically.</p>
             </div>
         </div>
     </div>
 
+    <!-- COMPARISON TABLE -->
     <div class="row my-5">
         <div class="col-12">
             <h2 class="text-center" style="font-weight: 800; color: #1e1e2f; margin-bottom: 30px;">How It Compares</h2>
-            <div class="table-responsive" style="box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
-                <table class="table text-center m-0" style="background: #fff; border-collapse: collapse; width: 100%;">
+            <div style="box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
+                <table style="background: #fff; border-collapse: collapse; width: 100%; text-align: center;">
                     <thead>
-                        <tr style="background-color: #1e1e2f; color: white;">
-                            <th class="p-3 text-left">Feature Capabilities</th>
-                            <th class="p-3">session_redis (OCA)</th>
-                            <th class="p-3">session_redis_gt</th>
-                            <th class="p-3" style="background-color: #28a745; font-weight: 700; color: white;">This Module</th>
+                        <tr style="background-color: #1e1e2f; color: #ffffff;">
+                            <th style="padding: 14px 16px; text-align: left;">Feature Capabilities</th>
+                            <th style="padding: 14px 16px;">session_redis (OCA)</th>
+                            <th style="padding: 14px 16px;">session_redis_gt</th>
+                            <th style="padding: 14px 16px; background-color: #28a745; font-weight: 700; color: #ffffff;">This Module</th>
                         </tr>
                     </thead>
                     <tbody style="color: #4A5568;">
                         <tr style="border-bottom: 1px solid #edf2f7;">
-                            <td class="p-3 text-left font-weight-bold">Single Instance Redis</td>
-                            <td class="p-3 text-success" style="font-size: 1.2rem;">&#10003;</td>
-                            <td class="p-3 text-success" style="font-size: 1.2rem;">&#10003;</td>
-                            <td class="p-3 font-weight-bold" style="font-size: 1.2rem; background-color: #f2faf4; color: #28a745;">&#10003;</td>
+                            <td style="padding: 12px 16px; text-align: left; font-weight: 700;">Single Instance Redis</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; color: #28a745;">&#10003;</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; color: #28a745;">&#10003;</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; font-weight: 700; background-color: #f2faf4; color: #28a745;">&#10003;</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #edf2f7;">
-                            <td class="p-3 text-left font-weight-bold">Redis Cluster Deployments</td>
-                            <td class="p-3 text-success" style="font-size: 1.2rem;">&#10003;</td>
-                            <td class="p-3 text-success" style="font-size: 1.2rem;">&#10003;</td>
-                            <td class="p-3 font-weight-bold" style="font-size: 1.2rem; background-color: #f2faf4; color: #28a745;">&#10003;</td>
+                            <td style="padding: 12px 16px; text-align: left; font-weight: 700;">Redis Cluster Deployments</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; color: #28a745;">&#10003;</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; color: #28a745;">&#10003;</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; font-weight: 700; background-color: #f2faf4; color: #28a745;">&#10003;</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #edf2f7;">
-                            <td class="p-3 text-left font-weight-bold">Master-Replica Routing Split</td>
-                            <td class="p-3 text-danger" style="font-size: 1.2rem;">&#10007;</td>
-                            <td class="p-3 text-danger" style="font-size: 1.2rem;">&#10007;</td>
-                            <td class="p-3 font-weight-bold" style="font-size: 1.2rem; background-color: #f2faf4; color: #28a745;">&#10003;</td>
+                            <td style="padding: 12px 16px; text-align: left; font-weight: 700;">Master-Replica Routing Split</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; color: #e63946;">&#10007;</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; color: #e63946;">&#10007;</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; font-weight: 700; background-color: #f2faf4; color: #28a745;">&#10003;</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #edf2f7;">
-                            <td class="p-3 text-left font-weight-bold">Local Sidecar Interface Reads</td>
-                            <td class="p-3 text-danger" style="font-size: 1.2rem;">&#10007;</td>
-                            <td class="p-3 text-danger" style="font-size: 1.2rem;">&#10007;</td>
-                            <td class="p-3 font-weight-bold" style="font-size: 1.2rem; background-color: #f2faf4; color: #28a745;">&#10003;</td>
+                            <td style="padding: 12px 16px; text-align: left; font-weight: 700;">Local Sidecar Interface Reads</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; color: #e63946;">&#10007;</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; color: #e63946;">&#10007;</td>
+                            <td style="padding: 12px 16px; font-size: 1.2rem; font-weight: 700; background-color: #f2faf4; color: #28a745;">&#10003;</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid #edf2f7;">
-                            <td class="p-3 text-left font-weight-bold">Read Operations Latency</td>
-                            <td class="p-3" style="color: #718096;">~1.0ms</td>
-                            <td class="p-3" style="color: #718096;">~1.0ms</td>
-                            <td class="p-3 font-weight-bold" style="font-size: 1.1rem; background-color: #e6f6ec; color: #28a745;">~0.1ms</td>
+                        <tr>
+                            <td style="padding: 12px 16px; text-align: left; font-weight: 700;">Read Operations Latency</td>
+                            <td style="padding: 12px 16px; color: #718096;">~1.0ms</td>
+                            <td style="padding: 12px 16px; color: #718096;">~1.0ms</td>
+                            <td style="padding: 12px 16px; font-size: 1.1rem; font-weight: 700; background-color: #e6f6ec; color: #28a745;">~0.1ms</td>
                         </tr>
                     </tbody>
                 </table>
@@ -177,24 +182,25 @@
         </div>
     </div>
 
+    <!-- QUICKSTART -->
     <div class="row my-5">
         <div class="col-12">
             <h2 class="text-center mb-4" style="font-weight: 800; color: #1e1e2f;">System Configuration Quickstart</h2>
 
             <div class="p-4 mb-3" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;">
                 <h4 style="font-weight: 700; color: #1e1e2f; margin-bottom: 12px;">1. System Prerequisites</h4>
-                <pre style="background-color: #2d3748; color: #fff; padding: 15px; border-radius: 6px; font-family: monospace; margin-bottom: 0;">pip install redis</pre>
+                <pre style="background-color: #2d3748; color: #ffffff; padding: 15px; border-radius: 6px; font-family: monospace; margin-bottom: 0;">pip install redis</pre>
             </div>
 
             <div class="p-4 mb-3" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;">
                 <h4 style="font-weight: 700; color: #1e1e2f; margin-bottom: 12px;">2. Server Parameter Setup (odoo.conf)</h4>
-                <pre style="background-color: #2d3748; color: #fff; padding: 15px; border-radius: 6px; font-family: monospace; margin-bottom: 0;">[options]
+                <pre style="background-color: #2d3748; color: #ffffff; padding: 15px; border-radius: 6px; font-family: monospace; margin-bottom: 0;">[options]
 server_wide_modules = base,web,session_redis_sidecar</pre>
             </div>
 
             <div class="p-4 mb-3" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;">
                 <h4 style="font-weight: 700; color: #1e1e2f; margin-bottom: 12px;">3. Production Target Context Switches</h4>
-                <pre style="background-color: #2d3748; color: #fff; padding: 15px; border-radius: 6px; font-family: monospace; margin-bottom: 0;"># Kubernetes Multi-Pod Target Routing Configuration
+                <pre style="background-color: #2d3748; color: #ffffff; padding: 15px; border-radius: 6px; font-family: monospace; margin-bottom: 0;"># Kubernetes Multi-Pod Target Routing Configuration
 export REDIS_MASTER_HOST=redis-master.redis.svc.cluster.local
 export REDIS_LOCAL_HOST=localhost
 
@@ -205,6 +211,7 @@ export REDIS_LOCAL_HOST=redis</pre>
         </div>
     </div>
 
+    <!-- FOOTER CTA -->
     <div class="row my-5 text-center justify-content-center mx-0" style="background-color: #f7fafc; border-radius: 12px; padding: 40px 20px;">
         <div class="col-md-8">
             <h4 style="font-weight: 700; color: #1e1e2f; margin-bottom: 10px;">Enterprise Scalability, Straight Out of the Box</h4>
@@ -212,7 +219,7 @@ export REDIS_LOCAL_HOST=redis</pre>
                 Actively evaluated across cluster infrastructures running Odoo core runtimes 16.0, 17.0, and 18.0. Distributed safely under the modular LGPL-3.0 copyleft terms.
             </p>
             <div class="mt-3">
-                <span class="d-inline-block px-4 py-2 text-white font-weight-bold" style="background-color: #28a745; border-radius: 30px; font-size: 0.9rem;">
+                <span style="display: inline-block; background-color: #28a745; color: #ffffff; font-weight: 700; padding: 10px 28px; border-radius: 30px; font-size: 0.9rem;">
                     &#10003; All Integrated Functional Matrix Passing Verification
                 </span>
             </div>
