@@ -1,176 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <style>
-        .oe_container {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
-        }
-        .oe_dark {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #fff;
-            padding: 40px;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        .oe_dark h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.5em;
-            font-weight: 700;
-        }
-        .oe_dark .tagline {
-            font-size: 1.3em;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-        .oe_highlight {
-            background: linear-gradient(90deg, #dc3545 0%, #ff6b35 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-        .feature-card {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 25px;
-            border-left: 4px solid #dc3545;
-        }
-        .feature-card h4 {
-            color: #1a1a2e;
-            margin: 0 0 10px 0;
-            font-size: 1.2em;
-        }
-        .feature-card p {
-            margin: 0;
-            color: #666;
-        }
-        .stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 3em;
-            font-weight: 700;
-            color: #28a745;
-        }
-        .stat-label {
-            font-size: 0.9em;
-            color: #666;
-        }
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-        }
-        .comparison-table th {
-            background: #1a1a2e;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-        }
-        .comparison-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #eee;
-            text-align: center;
-        }
-        .comparison-table tr:hover {
-            background: #f8f9fa;
-        }
-        .check {
-            color: #28a745;
-            font-size: 1.3em;
-        }
-        .cross {
-            color: #dc3545;
-            font-size: 1.3em;
-        }
-        .architecture-diagram {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 30px 0;
-        }
-        .architecture-diagram pre {
-            text-align: left;
-            display: inline-block;
-            background: #1a1a2e;
-            color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            font-size: 14px;
-            overflow-x: auto;
-        }
-        .config-section {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 20px 0;
-        }
-        .config-section h3 {
-            margin-top: 0;
-            color: #1a1a2e;
-        }
-        code {
-            background: #f4f4f4;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-family: 'Consolas', monospace;
-        }
-        pre code {
-            display: block;
-            background: #282c34;
-            color: #abb2bf;
-            padding: 20px;
-            border-radius: 8px;
-            overflow-x: auto;
-        }
-        .section-title {
-            color: #1a1a2e;
-            border-bottom: 3px solid #dc3545;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-        }
-        .badge {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            margin: 5px;
-        }
-        .badge-k8s {
-            background: #326ce5;
-            color: #fff;
-        }
-        .badge-redis {
-            background: #dc3545;
-            color: #fff;
-        }
-        .badge-speed {
-            background: #28a745;
-            color: #fff;
-        }
+        .oe_container { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; }
+        .oe_dark { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 40px; text-align: center; border-radius: 8px; margin-bottom: 30px; }
+        .oe_dark h1 { margin: 0 0 10px 0; font-size: 2.5em; font-weight: 700; }
+        .oe_dark .tagline { font-size: 1.3em; opacity: 0.9; margin-bottom: 20px; }
+        .oe_highlight { background: linear-gradient(90deg, #dc3545 0%, #ff6b35 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 0; }
+        .feature-card { background: #f8f9fa; border-radius: 12px; padding: 25px; border-left: 4px solid #dc3545; }
+        .feature-card h4 { color: #1a1a2e; margin: 0 0 10px 0; font-size: 1.2em; }
+        .feature-card p { margin: 0; color: #666; }
+        .stats-row { display: flex; justify-content: center; gap: 40px; margin: 30px 0; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 3em; font-weight: 700; color: #28a745; }
+        .stat-label { font-size: 0.9em; color: #666; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; }
+        .comparison-table th { background: #1a1a2e; color: #fff; padding: 15px; text-align: center; }
+        .comparison-table td { padding: 12px 15px; border-bottom: 1px solid #eee; text-align: center; }
+        .comparison-table tr:hover { background: #f8f9fa; }
+        .check { color: #28a745; font-size: 1.3em; }
+        .cross { color: #dc3545; font-size: 1.3em; }
+        .architecture-diagram { background: #f8f9fa; padding: 30px; border-radius: 12px; text-align: center; margin: 30px 0; }
+        .architecture-diagram pre { text-align: left; display: inline-block; background: #1a1a2e; color: #fff; padding: 25px; border-radius: 8px; font-size: 14px; overflow-x: auto; font-family: monospace; white-space: pre; }
+        .config-section { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 25px; margin: 20px 0; }
+        .config-section h3 { margin-top: 0; color: #1a1a2e; }
+        code { background: #f4f4f4; padding: 3px 8px; border-radius: 4px; font-family: 'Consolas', monospace; }
+        pre code { display: block; background: #282c34; color: #abb2bf; padding: 20px; border-radius: 8px; overflow-x: auto; }
+        .section-title { color: #1a1a2e; border-bottom: 3px solid #dc3545; padding-bottom: 10px; margin-bottom: 25px; }
+        .badge { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; font-weight: 600; margin: 5px; }
+        .badge-k8s { background: #326ce5; color: #fff; }
+        .badge-redis { background: #dc3545; color: #fff; }
+        .badge-speed { background: #28a745; color: #fff; }
     </style>
 </head>
 <body>
     <div class="oe_container">
-        <!-- Hero Section -->
         <div class="oe_dark">
             <h1>Redis Session Store - <span class="oe_highlight">Sidecar Pattern</span></h1>
             <p class="tagline">10x Faster Session Reads for High-Traffic Odoo Deployments</p>
@@ -181,7 +47,6 @@
             </div>
         </div>
 
-        <!-- Performance Stats -->
         <div class="stats-row">
             <div class="stat-item">
                 <div class="stat-number">10x</div>
@@ -201,15 +66,11 @@
             </div>
         </div>
 
-        <!-- Problem Statement -->
         <h2 class="section-title">The Problem with Traditional Redis Sessions</h2>
         <p>
-            Standard Odoo Redis session modules connect to a <strong>single Redis endpoint</strong>.
-            Every page request requires a network round-trip to read the session (~1ms).
-            At scale, this becomes a bottleneck.
+            Standard Odoo Redis session modules connect to a <strong>single Redis endpoint</strong>. Every page request requires a network round-trip to read the session (~1ms). At scale, this becomes a bottleneck.
         </p>
 
-        <!-- Features Grid -->
         <h2 class="section-title">Why This Module is Different</h2>
         <div class="feature-grid">
             <div class="feature-card">
@@ -238,43 +99,41 @@
             </div>
         </div>
 
-        <!-- Architecture Diagram -->
         <h2 class="section-title">Architecture</h2>
         <div class="architecture-diagram">
-            <pre>
+<pre>
 ┌─────────────────────────────────────────────────────────────────┐
 │                     KUBERNETES CLUSTER                          │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐ │
-│  │     POD 1       │  │     POD 2       │  │     POD 3       │ │
-│  ├─────────────────┤  ├─────────────────┤  ├─────────────────┤ │
-│  │ ┌─────────────┐ │  │ ┌─────────────┐ │  │ ┌─────────────┐ │ │
-│  │ │    Odoo     │ │  │ │    Odoo     │ │  │ │    Odoo     │ │ │
-│  │ └──────┬──────┘ │  │ └──────┬──────┘ │  │ └──────┬──────┘ │ │
-│  │        │        │  │        │        │  │        │        │ │
-│  │   localhost     │  │   localhost     │  │   localhost     │ │
-│  │    (0.1ms)      │  │    (0.1ms)      │  │    (0.1ms)      │ │
-│  │        │        │  │        │        │  │        │        │ │
-│  │ ┌──────▼──────┐ │  │ ┌──────▼──────┐ │  │ ┌──────▼──────┐ │ │
-│  │ │   Redis     │ │  │ │   Redis     │ │  │ │   Redis     │ │ │
-│  │ │  Replica    │ │  │ │  Replica    │ │  │ │  Replica    │ │ │
-│  │ └──────┬──────┘ │  │ └──────┬──────┘ │  │ └──────┬──────┘ │ │
-│  └────────┼────────┘  └────────┼────────┘  └────────┼────────┘ │
-│           │                    │                    │          │
-│           └────────────────────┼────────────────────┘          │
-│                                │                               │
-│                    ┌───────────▼───────────┐                   │
-│                    │    REDIS MASTER       │                   │
-│                    │  (Source of Truth)    │                   │
-│                    │    WRITES → Here      │                   │
-│                    └───────────────────────┘                   │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  │
+│  │     POD 1       │  │     POD 2       │  │     POD 3       │  │
+│  ├─────────────────┤  ├─────────────────┤  ├─────────────────┤  │
+│  │ ┌─────────────┐ │  │ ┌─────────────┐ │  │ ┌─────────────┐ │  │
+│  │ │    Odoo     │ │  │ │    Odoo     │ │  │ │    Odoo     │ │  │
+│  │ └──────┬──────┘ │  │ └──────┬──────┘ │  │ └──────┬──────┘ │  │
+│  │        │        │  │        │        │  │        │        │  │
+│  │   localhost     │  │   localhost     │  │   localhost     │  │
+│  │    (0.1ms)      │  │    (0.1ms)      │  │    (0.1ms)      │  │
+│  │        │        │  │        │        │  │        │        │  │
+│  │ ┌──────▼──────┐ │  │ ┌──────▼──────┐ │  │ ┌──────▼──────┐ │  │
+│  │ │   Redis     │ │  │ │   Redis     │ │  │ │   Redis     │ │  │
+│  │ │  Replica    │ │  │ │  Replica    │ │  │ │  Replica    │ │  │
+│  │ └──────┬──────┘ │  │ └──────┬──────┘ │  │ └──────┬──────┘ │  │
+│  └────────┼────────┘  └────────┼────────┘  └────────┼────────┘  │
+│           │                    │                    │           │
+│           └────────────────────┼────────────────────┘           │
+│                                │                                │
+│                    ┌───────────▼───────────┐                    │
+│                    │    REDIS MASTER       │                    │
+│                    │  (Source of Truth)    │                    │
+│                    │    WRITES → Here      │                    │
+│                    └───────────────────────┘                    │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-            </pre>
+</pre>
         </div>
 
-        <!-- Comparison Table -->
         <h2 class="section-title">Comparison with Other Modules</h2>
         <table class="comparison-table">
             <thead>
@@ -331,19 +190,16 @@
             </tbody>
         </table>
 
-        <!-- Configuration -->
         <h2 class="section-title">Quick Start</h2>
         <div class="config-section">
             <h3>1. Install Dependencies</h3>
             <pre><code>pip install redis</code></pre>
         </div>
-
         <div class="config-section">
             <h3>2. Configure odoo.conf</h3>
             <pre><code>[options]
 server_wide_modules = base,web,session_redis_sidecar</code></pre>
         </div>
-
         <div class="config-section">
             <h3>3. Set Environment Variables</h3>
             <pre><code># Kubernetes Sidecar Mode
@@ -355,7 +211,6 @@ export REDIS_MASTER_HOST=redis
 export REDIS_LOCAL_HOST=redis</code></pre>
         </div>
 
-        <!-- Configuration Reference -->
         <h2 class="section-title">Configuration Reference</h2>
         <table class="comparison-table">
             <thead>
@@ -404,7 +259,6 @@ export REDIS_LOCAL_HOST=redis</code></pre>
             </tbody>
         </table>
 
-        <!-- Footer -->
         <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 8px;">
             <p style="font-size: 1.2em; margin-bottom: 15px;">
                 <strong>Built for Production.</strong> Tested on Odoo 16, 17, 18 & 19.
