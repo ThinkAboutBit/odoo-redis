@@ -1,7 +1,7 @@
 {
     "name": "Redis Session Store - Sidecar Pattern",
     "summary": "10x faster session reads with Master-Replica sidecar architecture for Kubernetes",
-    "description": """
+    "description": "
 Redis Session Store with Sidecar Pattern
 =========================================
 
@@ -69,7 +69,7 @@ Support
 -------
 * Documentation: Full README with Kubernetes deployment examples
 * Examples: Docker Compose setup included for local testing
-* Source: unoffocialtab@gmail.com
+* Source: unoffocialtab@gmail.com",
     "version": "19.0.1.0.0",
     "category": "Technical",
     "author": "Think About Bit Technologies",
