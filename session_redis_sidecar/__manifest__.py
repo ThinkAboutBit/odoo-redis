@@ -70,7 +70,6 @@ Support
 * Documentation: Full README with Kubernetes deployment examples
 * Examples: Docker Compose setup included for local testing
 * Source: unoffocialtab@gmail.com
-""",
     "version": "18.0.1.0.0",
     "category": "Technical",
     "author": "Think About Bit Technologies",
