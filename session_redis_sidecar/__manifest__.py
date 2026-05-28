@@ -71,7 +71,7 @@ Support
 * Examples: Docker Compose setup included for local testing
 * Source: unoffocialtab@gmail.com
 """,
-    "version": "1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Technical",
     "author": "Think About Bit Technologies",
     "website": "www.thinkaboutbit.com",
